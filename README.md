@@ -38,7 +38,7 @@ Using javascript methods that I was new too, despite examples being given.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2025] [Arunavo Chowdhury]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
