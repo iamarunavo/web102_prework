@@ -149,11 +149,12 @@ allBtn.addEventListener("click", () => {
 const descriptionContainer = document.getElementById("description-container");
 
 // use filter or reduce to count the number of unfunded games
-const unfundedGameCounts = GAMES_JSON.filter(game => game.pledged < game.goal).length;
+const unfundedGamesCount = GAMES_JSON.filter(game => game.pledged < game.goal).length;
+const totalMoneyRaised = GAMES_JSON.reduce((total, game) => total + game.pledged, 0);
 
 // create a string that explains the number of unfunded games using the ternary operator
 const messageStr = `
-  A total of $${totalMoneyRaised.toLocaleString()} has been raised for ${GAMES_JSON.length} games. 
+  A total of $${totalMoneyRaised.toLocaleString()} has been raised for ${totalGames} games. 
   Currently, ${unfundedGamesCount} game${unfundedGamesCount === 1 ? " remains" : "s remain"} unfunded.
 `;
 
@@ -181,7 +182,7 @@ const firstWordMostFunded = mostFundedGame.name.split(" ")[0];
 const firstWordSecondFunded = secondMostFundedGame.name.split(" ")[0];
 
 // Log or display the results
-console.log(`First word of the most funded game: ${firstWordMostFunded}`);
+console.log(`First word of the most funded game: ${firstWordMostFunded}`); 
 console.log(`First word of the second most funded game: ${firstWordSecondFunded}`);
 
 // Update the DOM to display the top two most funded game
